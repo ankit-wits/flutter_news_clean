@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "538184665924",
+    "project_id": "uniswipe-app",
+    "storage_bucket": "uniswipe-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538184665924:android:20dd972d477753e26ea511",
+        "android_client_info": {
+          "package_name": "com.uniswipe.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoxrQi-XbOSGmwF9-XoFHH8AFjPZcWV8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
