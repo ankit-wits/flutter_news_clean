@@ -1,4 +1,4 @@
-package com.example.latest_app
+package com.uniswipe.app
 
 import io.flutter.embedding.android.FlutterActivity
 
