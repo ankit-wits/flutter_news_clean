@@ -1,18 +1,18 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:latest_app/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
-import 'package:latest_app/features/daily_news/presentation/bloc/article/remote/remote_article_event.dart';
-import 'package:latest_app/features/daily_news/presentation/pages/home/daily_news.dart';
+import 'package:latest_app/features/events_swipe/presentation/bloc/events_swipe_bloc.dart';
+import 'package:latest_app/features/events_swipe/presentation/pages/get_events.dart';
 import 'package:latest_app/injection_container.dart';
 
 import 'firebase_options.dart';
 
 void main() async {
-  await initializeDependencies();
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await initializeDependencies();
   runApp(const MyApp());
 }
 
@@ -21,15 +21,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<RemoteArticlesBloc>(
-      create: (context) => sl()..add(const GetArticles()),
+    return BlocProvider<EventsSwipeBloc>(
+      create: (context) => sl()..add(GetEventsSwipe()),
       child: MaterialApp(
         title: 'UniSwipe',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const DailyNews(),
+        home: const EventsSwipePage(),
       ),
     );
   }

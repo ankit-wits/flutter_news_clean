@@ -10,7 +10,6 @@ class EventsSwipeFirestoreService {
     try {
       final QuerySnapshot<Map<String, dynamic>> snapshot =
           await _firestore.collection(eventsCollection).get();
-
       return snapshot.docs
           .map((doc) => EventsSwipeModel.fromJson(doc.data()))
           .toList();
