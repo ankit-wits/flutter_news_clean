@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:latest_app/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
-import 'package:latest_app/features/daily_news/presentation/bloc/article/remote/remote_article_state.dart';
 
+import '../../bloc/article/remote/remote_article_bloc.dart';
+import '../../bloc/article/remote/remote_article_state.dart';
 import '../../widgets/article_view.dart';
 
 class DailyNews extends StatelessWidget {

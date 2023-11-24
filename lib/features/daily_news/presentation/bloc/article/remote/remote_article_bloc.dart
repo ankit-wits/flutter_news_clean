@@ -1,8 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:latest_app/core/resources/data_state.dart';
-import 'package:latest_app/features/daily_news/domain/usecases/get_article.dart';
-import 'package:latest_app/features/daily_news/presentation/bloc/article/remote/remote_article_event.dart';
-import 'package:latest_app/features/daily_news/presentation/bloc/article/remote/remote_article_state.dart';
+
+import '../../../../../../core/resources/data_state.dart';
+import '../../../../domain/usecases/get_article.dart';
+import 'remote_article_event.dart';
+import 'remote_article_state.dart';
 
 class RemoteArticlesBloc extends Bloc<RemoteArticlesEvent, RemoteArticleState> {
   final GetArticleUseCase _getArticleUseCase;
@@ -21,7 +23,9 @@ class RemoteArticlesBloc extends Bloc<RemoteArticlesEvent, RemoteArticleState> {
     }
 
     if (dataState is DataFailed) {
-      print(dataState.error!);
+      if (kDebugMode) {
+        print(dataState.error!);
+      }
       emit(RemoteArticlesError(dataState.error!));
     }
   }

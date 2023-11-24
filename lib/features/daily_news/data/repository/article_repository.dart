@@ -25,14 +25,14 @@ class ArticleRepositoryImpl implements ArticleRepository {
         return DataSuccess(httpResponse.data);
       } else {
         return DataFailed(
-          DioError(
+          DioException(
             error: httpResponse.response.statusMessage,
             response: httpResponse.response,
             requestOptions: httpResponse.response.requestOptions,
           ),
         );
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       return DataFailed(e);
     }
   }
